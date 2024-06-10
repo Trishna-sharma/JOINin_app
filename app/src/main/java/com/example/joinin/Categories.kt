@@ -100,8 +100,11 @@ class Categories : AppCompatActivity(), InputDialogFragment.InputModalListener {
     }
 
     override fun onSubmitButtonClicked(link: String, title: String, description: String, category: String) { //when user wants to add new data in the app
-        val message = "Submitting card data...\nGroup Title: $title\nDescription: $description\nCategory: $category"
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Submitting card data...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Group Title: " + title, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Description: " + description, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Category: " + category, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Submitted Successfully", Toast.LENGTH_SHORT).show();
 
         val cardData = CardData(R.drawable.success, title, description, link)
         val cardList = cardDataMap.getOrPut(category) { mutableListOf() }
